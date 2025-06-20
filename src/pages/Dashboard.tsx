@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,8 +15,10 @@ import {
   Clock,
   CheckCircle
 } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Dashboard = () => {
+  const { user } = useAuth();
   const projects = [
     {
       name: 'E-commerce Platform',
@@ -114,7 +115,15 @@ const Dashboard = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold gradient-text mb-2">Dashboard</h1>
-            <p className="text-muted-foreground">Welcome back! Here's what's happening with your projects.</p>
+            <p className="text-muted-foreground">
+              {user?.name || user?.email ? (
+                <>
+                  Welcome back, <span className="font-semibold text-violet-400">{user.name || user.email}</span>! Here's what's happening with your projects.
+                </>
+              ) : (
+                <>Welcome back! Here's what's happening with your projects.</>
+              )}
+            </p>
           </div>
           <Button className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 mt-4 lg:mt-0">
             <Plus className="w-4 h-4 mr-2" />

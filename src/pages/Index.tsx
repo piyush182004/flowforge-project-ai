@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -15,8 +14,10 @@ import {
   BarChart3,
   Zap
 } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Index = () => {
+  const { isAuthenticated } = useAuth();
   const features = [
     {
       icon: GitBranch,
@@ -70,18 +71,22 @@ const Index = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <Link to="/auth">
-                <Button variant="outline" className="border-violet-500/50 hover-glow">
-                  <User className="w-4 h-4 mr-2" />
-                  Sign In
-                </Button>
-              </Link>
-              <Link to="/dashboard">
-                <Button className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 animate-glow">
-                  Get Started
-                  <ChevronRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
+              {!isAuthenticated && (
+                <>
+                  <Link to="/auth">
+                    <Button variant="outline" className="border-violet-500/50 hover-glow">
+                      <User className="w-4 h-4 mr-2" />
+                      Sign In
+                    </Button>
+                  </Link>
+                  <Link to="/dashboard">
+                    <Button className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 animate-glow">
+                      Get Started
+                      <ChevronRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -107,15 +112,19 @@ const Index = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Link to="/dashboard">
-                  <Button size="lg" className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-lg px-8 py-6 animate-glow">
-                    Start Free Trial
-                    <ArrowUp className="w-5 h-5 ml-2 rotate-45" />
-                  </Button>
-                </Link>
+                {!isAuthenticated && (
+                  <>
+                    <Link to="/dashboard">
+                      <Button size="lg" className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-lg px-8 py-6 animate-glow">
+                        Start Free Trial
+                        <ArrowUp className="w-5 h-5 ml-2 rotate-45" />
+                      </Button>
+                    </Link>
+                  </>
+                )}
                 <Link to="/workflows">
                   <Button size="lg" variant="outline" className="border-violet-500/50 hover-glow text-lg px-8 py-6">
-                    Watch Demo
+                    Get Started
                     <ChevronRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
@@ -193,12 +202,14 @@ const Index = () => {
             Join thousands of development teams who have revolutionized their 
             project management with FlowForge's intelligent automation.
           </p>
-          <Link to="/auth">
-            <Button size="lg" className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-lg px-8 py-6 animate-glow">
-              Start Your Free Trial
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </Button>
-          </Link>
+          {!isAuthenticated && (
+            <Link to="/auth">
+              <Button size="lg" className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-lg px-8 py-6 animate-glow">
+                Start Your Free Trial
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          )}
         </div>
       </section>
 
