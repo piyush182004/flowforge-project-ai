@@ -1,21 +1,22 @@
-
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { ArrowUp, Github, Mail } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Auth = () => {
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [formData, setFormData] = useState({
+  const [isSignUp, setIsSignUp] = useState(false);  const [formData, setFormData] = useState({
     email: '',
     password: '',
     confirmPassword: '',
     name: ''
   });
+  const { isAuthenticated, isLoading, signIn, user } = useAuth();
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -26,9 +27,16 @@ const Auth = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle authentication logic here
+    // This would be for email/password login if implemented
+    // For now, we're using Civic Auth
     console.log('Auth form submitted:', formData);
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -75,13 +83,13 @@ const Auth = () => {
             <CardContent className="space-y-6">
               {/* Social Login */}
               <div className="space-y-3">
-                <Button variant="outline" className="w-full border-white/20 hover-glow">
-                  <Github className="w-4 h-4 mr-2" />
-                  Continue with GitHub
-                </Button>
-                <Button variant="outline" className="w-full border-white/20 hover-glow">
+                <Button 
+                  onClick={() => signIn()} 
+                  disabled={isLoading} 
+                  className="w-full border-white/20 hover-glow bg-gradient-to-r from-blue-500 to-cyan-600"
+                >
                   <Mail className="w-4 h-4 mr-2" />
-                  Continue with Google
+                  Sign in with Google
                 </Button>
               </div>
 
@@ -93,7 +101,7 @@ const Auth = () => {
               </div>
 
               {/* Email/Password Form */}
-              <form onSubmit={handleSubmit} className="space-y-4">
+              {/* <form onSubmit={handleSubmit} className="space-y-4">
                 {isSignUp && (
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name</Label>
@@ -157,7 +165,7 @@ const Auth = () => {
                   {isSignUp ? 'Create Account' : 'Sign In'}
                   <ArrowUp className="w-4 h-4 ml-2 rotate-45" />
                 </Button>
-              </form>
+              </form> */}
 
               {/* Toggle Sign Up/Sign In */}
               <div className="text-center">

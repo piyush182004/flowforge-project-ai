@@ -1,16 +1,16 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Home, User, Calendar, Code, Settings } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const location = useLocation();
+const Layout: React.FC<LayoutProps> = ({ children }) => {  const location = useLocation();
   const isHome = location.pathname === '/';
+  const { isAuthenticated, signOut } = useAuth();
 
   const navItems = [
     { name: 'Home', path: '/', icon: Home },
@@ -59,10 +59,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Button variant="outline" size="sm" className="border-violet-500/50 hover-glow">
-                <User className="w-4 h-4 mr-2" />
-                Profile
-              </Button>
+              {isAuthenticated ? (
+                <Button variant="outline" size="sm" className="border-violet-500/50 hover-glow" onClick={signOut}>
+                  <User className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
+              ) : (
+                <Link to="/auth">
+                  <Button variant="outline" size="sm" className="border-violet-500/50 hover-glow">
+                    <User className="w-4 h-4 mr-2" />
+                    Sign In
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
