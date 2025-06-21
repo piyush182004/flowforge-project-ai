@@ -224,7 +224,7 @@ const Index = () => {
               <span className="text-lg font-bold gradient-text">FlowForge</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              © 2024 FlowForge. Revolutionizing project management with AI.
+              © 2025 FlowForge. Revolutionizing project management with AI.
             </p>
           </div>
         </div>
