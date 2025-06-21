@@ -1,0 +1,230 @@
+{
+  "project_overview": {
+    "total_files": 54,
+    "file_types": {
+      ".html": 4,
+      ".css": 6,
+      ".jpg": 18,
+      ".png": 7,
+      ".js": 9,
+      ".ttf": 4,
+      ".woff2": 4,
+      ".map": 2
+    },
+    "directories": [],
+    "main_components": [],
+    "entry_points": []
+  },
+  "existing_features": [
+    {
+      "name": "authentication",
+      "confidence": 0.1111111111111111,
+      "files": [
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js"
+      ],
+      "description": "User authentication and authorization system"
+    },
+    {
+      "name": "database",
+      "confidence": 0.1111111111111111,
+      "files": [
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js"
+      ],
+      "description": "Database integration and data management"
+    },
+    {
+      "name": "api",
+      "confidence": 0.12962962962962962,
+      "files": [
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js",
+        "templatemo_591_villa_agency\\assets\\js\\isotope.min.js"
+      ],
+      "description": "API endpoints and data communication"
+    },
+    {
+      "name": "frontend",
+      "confidence": 0.16666666666666666,
+      "files": [
+        "templatemo_591_villa_agency\\assets\\js\\counter.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\assets\\js\\custom.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js",
+        "templatemo_591_villa_agency\\assets\\js\\isotope.min.js"
+      ],
+      "description": "User interface and client-side functionality"
+    },
+    {
+      "name": "backend",
+      "confidence": 0.12962962962962962,
+      "files": [
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js",
+        "templatemo_591_villa_agency\\assets\\js\\isotope.min.js"
+      ],
+      "description": "Server-side logic and business processes"
+    },
+    {
+      "name": "deployment",
+      "confidence": 0.16666666666666666,
+      "files": [
+        "templatemo_591_villa_agency\\assets\\js\\counter.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\assets\\js\\custom.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js",
+        "templatemo_591_villa_agency\\assets\\js\\isotope.min.js"
+      ],
+      "description": "Deployment and CI/CD configuration"
+    },
+    {
+      "name": "testing",
+      "confidence": 0.12962962962962962,
+      "files": [
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js",
+        "templatemo_591_villa_agency\\assets\\js\\isotope.min.js"
+      ],
+      "description": "Testing framework and test coverage"
+    },
+    {
+      "name": "documentation",
+      "confidence": 0.09259259259259259,
+      "files": [
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+        "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+        "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js"
+      ],
+      "description": "Project documentation and guides"
+    }
+  ],
+  "missing_features": [],
+  "workflow_suggestions": [
+    {
+      "id": "auth_flow",
+      "name": "Authentication Flow",
+      "description": "User registration and login process",
+      "steps": [
+        {
+          "name": "User Registration",
+          "type": "auth"
+        },
+        {
+          "name": "Email Verification",
+          "type": "auth"
+        },
+        {
+          "name": "User Login",
+          "type": "auth"
+        },
+        {
+          "name": "Session Management",
+          "type": "auth"
+        }
+      ]
+    },
+    {
+      "id": "api_flow",
+      "name": "API Development Flow",
+      "description": "API endpoint development process",
+      "steps": [
+        {
+          "name": "API Design",
+          "type": "design"
+        },
+        {
+          "name": "Endpoint Implementation",
+          "type": "development"
+        },
+        {
+          "name": "API Testing",
+          "type": "testing"
+        },
+        {
+          "name": "Documentation",
+          "type": "documentation"
+        }
+      ]
+    },
+    {
+      "id": "basic_flow",
+      "name": "Basic Development Flow",
+      "description": "Standard development process",
+      "steps": [
+        {
+          "name": "Project Setup",
+          "type": "setup"
+        },
+        {
+          "name": "Feature Development",
+          "type": "development"
+        },
+        {
+          "name": "Testing",
+          "type": "testing"
+        },
+        {
+          "name": "Deployment",
+          "type": "deployment"
+        }
+      ]
+    }
+  ],
+  "complexity_analysis": {
+    "cyclomatic_complexity": 0,
+    "lines_of_code": 22336,
+    "function_count": 0,
+    "class_count": 0,
+    "comment_ratio": 0.13901325214899712,
+    "maintainability_index": 80.44426504297995
+  },
+  "technology_stack": {
+    "languages": [],
+    "frameworks": [
+      "express",
+      "angular"
+    ],
+    "databases": [
+      "redis"
+    ],
+    "tools": [],
+    "platforms": []
+  },
+  "recommendations": [
+    "Consider adding automated testing for better code quality",
+    "Implement proper error handling and logging",
+    "Add API documentation for better developer experience",
+    "Consider implementing CI/CD pipeline for automated deployment"
+  ]
+}
