@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -48,59 +48,61 @@ const Dashboard = () => {
   const [workflowGraphData, setWorkflowGraphData] = useState<any>(null);
   const [loadingGraph, setLoadingGraph] = useState(false);
 
-  const projects = [
-    {
-      name: 'E-commerce Platform',
-      status: 'Active',
-      progress: 78,
-      team: 5,
-      lastUpdate: '2 hours ago',
-      color: 'from-violet-500 to-purple-600'
-    },
-    {
-      name: 'Mobile App Redesign',
-      status: 'In Review',
-      progress: 92,
-      team: 3,
-      lastUpdate: '1 day ago',
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      name: 'API Integration',
-      status: 'Planning',
-      progress: 34,
-      team: 4,
-      lastUpdate: '3 days ago',
-      color: 'from-emerald-500 to-teal-600'
+  // Recent analyses state
+  const [recentAnalyses, setRecentAnalyses] = useState<any[]>([]);
+
+  // Load recent analyses from localStorage on mount
+  useEffect(() => {
+    const savedAnalyses = localStorage.getItem('recentAnalyses');
+    if (savedAnalyses) {
+      try {
+        const parsed = JSON.parse(savedAnalyses);
+        setRecentAnalyses(parsed);
+      } catch (error) {
+        console.error('Error loading recent analyses:', error);
+      }
     }
-  ];
+  }, []);
+
+  // Save recent analyses to localStorage when they change
+  useEffect(() => {
+    localStorage.setItem('recentAnalyses', JSON.stringify(recentAnalyses));
+  }, [recentAnalyses]);
+
+  // View analysis details
+  const handleViewAnalysis = (analysis: any) => {
+    setAnalysisResult(analysis.analysis);
+    setGraphData(analysis.graph);
+    setProjectId(analysis.id);
+    setCurrentStep('complete');
+  };
 
   const quickStats = [
     {
-      title: 'Active Projects',
-      value: '12',
-      change: '+3',
+      title: 'Projects Analyzed',
+      value: recentAnalyses.length.toString(),
+      change: '+1',
       icon: Code,
       color: 'text-violet-400'
     },
     {
-      title: 'Tasks Completed',
-      value: '84',
-      change: '+12',
+      title: 'Features Detected',
+      value: recentAnalyses.reduce((sum, analysis) => sum + analysis.features.existing, 0).toString(),
+      change: '+5',
       icon: CheckCircle,
       color: 'text-emerald-400'
     },
     {
-      title: 'Team Members',
-      value: '23',
-      change: '+2',
+      title: 'Improvements Suggested',
+      value: recentAnalyses.reduce((sum, analysis) => sum + analysis.features.missing, 0).toString(),
+      change: '+3',
       icon: Users,
       color: 'text-blue-400'
     },
     {
-      title: 'Avg. Velocity',
-      value: '8.4',
-      change: '+0.8',
+      title: 'Workflows Generated',
+      value: recentAnalyses.reduce((sum, analysis) => sum + analysis.features.workflows, 0).toString(),
+      change: '+2',
       icon: BarChart3,
       color: 'text-orange-400'
     }
@@ -278,6 +280,23 @@ const Dashboard = () => {
       setGraphData(result.graph);
       setCurrentStep('complete');
 
+      // Add to recent analyses
+      const newAnalysis = {
+        id: projectId,
+        name: uploadedFile?.name || 'Unknown Project',
+        timestamp: new Date().toISOString(),
+        analysis: result.analysis,
+        graph: result.graph,
+        status: 'completed',
+        features: {
+          existing: result.analysis.existing_features?.length || 0,
+          missing: result.analysis.missing_features?.length || 0,
+          workflows: result.analysis.workflow_suggestions?.length || 0
+        }
+      };
+      
+      setRecentAnalyses(prev => [newAnalysis, ...prev.slice(0, 4)]); // Keep only 5 most recent
+
     } catch (err) {
       console.error('❌ Analysis error:', err);
       const errorMessage = err instanceof Error ? err.message : 'Analysis failed. Please try again.';
@@ -301,6 +320,12 @@ const Dashboard = () => {
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
+  };
+
+  // Clear recent analyses
+  const handleClearAnalyses = () => {
+    setRecentAnalyses([]);
+    localStorage.removeItem('recentAnalyses');
   };
 
   // Handle viewing workflow graph
@@ -681,44 +706,78 @@ const Dashboard = () => {
           <div className="lg:col-span-2">
             <Card className="glass-effect">
               <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Code className="w-5 h-5 mr-2" />
-                  Recent Analysis
-                </CardTitle>
-                <CardDescription>Your recently analyzed projects</CardDescription>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <CardTitle className="text-white flex items-center">
+                      <Code className="w-5 h-5 mr-2" />
+                      Recent Analysis
+                    </CardTitle>
+                    <CardDescription>Your recently analyzed projects</CardDescription>
+                  </div>
+                  {recentAnalyses.length > 0 && (
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      onClick={handleClearAnalyses}
+                      className="text-red-400 border-red-400/30 hover:bg-red-400/10"
+                    >
+                      Clear All
+                    </Button>
+                  )}
+                </div>
               </CardHeader>
               <CardContent className="space-y-4">
-                {projects.map((project, index) => (
-                  <div key={index} className="glass-effect p-4 rounded-lg hover-glow">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-semibold text-white">{project.name}</h3>
-                      <Badge variant={project.status === 'Active' ? 'default' : 'secondary'}>
-                        {project.status}
-                      </Badge>
-                    </div>
-                    
-                    <div className="w-full bg-white/10 rounded-full h-2 mb-3">
-                      <div 
-                        className={`h-2 rounded-full bg-gradient-to-r ${project.color}`}
-                        style={{ width: `${project.progress}%` }}
-                      ></div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <div className="flex items-center space-x-4">
-                        <span className="flex items-center">
-                          <Users className="w-4 h-4 mr-1" />
-                          {project.team} members
-                        </span>
-                        <span>{project.progress}% complete</span>
+                {recentAnalyses.length > 0 ? (
+                  recentAnalyses.map((analysis, index) => (
+                    <div 
+                      key={analysis.id} 
+                      className="glass-effect p-4 rounded-lg hover-glow cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+                      onClick={() => handleViewAnalysis(analysis)}
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="font-semibold text-white">{analysis.name}</h3>
+                        <Badge variant="default" className="bg-green-500/20 text-green-400 border-green-500/30">
+                          {analysis.status}
+                        </Badge>
                       </div>
-                      <span className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {project.lastUpdate}
-                      </span>
+                      
+                      <div className="grid grid-cols-3 gap-4 mb-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-violet-400">{analysis.features.existing}</div>
+                          <div className="text-xs text-muted-foreground">Features</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-orange-400">{analysis.features.missing}</div>
+                          <div className="text-xs text-muted-foreground">Improvements</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-blue-400">{analysis.features.workflows}</div>
+                          <div className="text-xs text-muted-foreground">Workflows</div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between text-sm text-muted-foreground">
+                        <div className="flex items-center space-x-4">
+                          <span className="flex items-center">
+                            <Brain className="w-4 h-4 mr-1" />
+                            AI Analyzed
+                          </span>
+                          <span>{(analysis.graph?.nodes?.length || 0) + (analysis.graph?.edges?.length || 0)} elements</span>
+                        </div>
+                        <span className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {new Date(analysis.timestamp).toLocaleDateString()}
+                        </span>
+                      </div>
                     </div>
+                  ))
+                ) : (
+                  <div className="text-center py-8 text-muted-foreground">
+                    <Brain className="w-12 h-12 mx-auto mb-4 opacity-50" />
+                    <p className="text-lg font-medium mb-2">No analyses yet</p>
+                    <p className="text-sm">Upload your first project to see analysis results here</p>
                   </div>
-                ))}
+                )}
               </CardContent>
             </Card>
           </div>

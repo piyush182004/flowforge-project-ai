@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Repositories from "./pages/Repositories";
+import ScrumBoard from "./pages/ScrumBoard";
 import NotFound from "./pages/NotFound";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 import { Login } from "./components/auth/Login";
@@ -39,7 +40,7 @@ const App = () => (
         } />
         <Route path="/scrum" element={
           <ProtectedRoute>
-            <Dashboard />
+            <ScrumBoard />
           </ProtectedRoute>
         } />
         <Route path="*" element={<NotFound />} />
