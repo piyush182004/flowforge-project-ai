@@ -1,0 +1,710 @@
+{
+  "nodes": [
+    {
+      "id": "feature_0",
+      "label": "Responsive_Design",
+      "type": "development",
+      "category": "existing_feature",
+      "data": {
+        "description": "Mobile-responsive design with CSS media queries",
+        "confidence": 0.9,
+        "files": [
+          "templatemo_591_villa_agency\\assets\\css\\animate.css",
+          "templatemo_591_villa_agency\\assets\\css\\flex-slider.css",
+          "templatemo_591_villa_agency\\assets\\css\\fontawesome.css",
+          "templatemo_591_villa_agency\\assets\\css\\owl.css",
+          "templatemo_591_villa_agency\\assets\\css\\templatemo-villa-agency.css",
+          "templatemo_591_villa_agency\\vendor\\bootstrap\\css\\bootstrap.min.css"
+        ],
+        "feature_name": "responsive_design"
+      },
+      "style": {
+        "backgroundColor": "#10B981",
+        "color": "white",
+        "borderColor": "#10B981",
+        "borderWidth": 2,
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "position": {
+        "x": 600.0,
+        "y": 300.0
+      },
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "id": "feature_1",
+      "label": "Interactive_Elements",
+      "type": "development",
+      "category": "existing_feature",
+      "data": {
+        "description": "JavaScript-powered interactive components",
+        "confidence": 0.8,
+        "files": [
+          "templatemo_591_villa_agency\\assets\\js\\counter.js",
+          "templatemo_591_villa_agency\\assets\\js\\custom.js",
+          "templatemo_591_villa_agency\\assets\\js\\isotope.min.js",
+          "templatemo_591_villa_agency\\assets\\js\\owl-carousel.js",
+          "templatemo_591_villa_agency\\vendor\\bootstrap\\js\\bootstrap.min.js",
+          "templatemo_591_villa_agency\\vendor\\jquery\\jquery.js",
+          "templatemo_591_villa_agency\\vendor\\jquery\\jquery.min.js",
+          "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.js",
+          "templatemo_591_villa_agency\\vendor\\jquery\\jquery.slim.min.js"
+        ],
+        "feature_name": "interactive_elements"
+      },
+      "style": {
+        "backgroundColor": "#10B981",
+        "color": "white",
+        "borderColor": "#10B981",
+        "borderWidth": 2,
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "position": {
+        "x": 400.0,
+        "y": 500.0
+      },
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "id": "feature_2",
+      "label": "Contact_Forms",
+      "type": "development",
+      "category": "existing_feature",
+      "data": {
+        "description": "Contact forms for user interaction",
+        "confidence": 0.7,
+        "files": [
+          "templatemo_591_villa_agency\\contact.html",
+          "templatemo_591_villa_agency\\index.html",
+          "templatemo_591_villa_agency\\properties.html",
+          "templatemo_591_villa_agency\\property-details.html"
+        ],
+        "feature_name": "contact_forms"
+      },
+      "style": {
+        "backgroundColor": "#10B981",
+        "color": "white",
+        "borderColor": "#10B981",
+        "borderWidth": 2,
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "position": {
+        "x": 200.0,
+        "y": 300.0
+      },
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "id": "feature_3",
+      "label": "Image_Gallery",
+      "type": "development",
+      "category": "existing_feature",
+      "data": {
+        "description": "Image gallery or carousel functionality",
+        "confidence": 0.6,
+        "files": [
+          "templatemo_591_villa_agency\\assets\\images\\banner-01.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\banner-02.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\banner-03.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\contact-bg.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\deal-01.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\deal-02.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\deal-03.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\email-icon.png",
+          "templatemo_591_villa_agency\\assets\\images\\featured-icon.png",
+          "templatemo_591_villa_agency\\assets\\images\\featured.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\info-icon-01.png",
+          "templatemo_591_villa_agency\\assets\\images\\info-icon-02.png",
+          "templatemo_591_villa_agency\\assets\\images\\info-icon-03.png",
+          "templatemo_591_villa_agency\\assets\\images\\info-icon-04.png",
+          "templatemo_591_villa_agency\\assets\\images\\page-heading-bg.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\phone-icon.png",
+          "templatemo_591_villa_agency\\assets\\images\\property-01.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\property-02.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\property-03.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\property-04.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\property-05.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\property-06.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\single-property.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\video-bg.jpg",
+          "templatemo_591_villa_agency\\assets\\images\\video-frame.jpg"
+        ],
+        "feature_name": "image_gallery"
+      },
+      "style": {
+        "backgroundColor": "#10B981",
+        "color": "white",
+        "borderColor": "#10B981",
+        "borderWidth": 2,
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "position": {
+        "x": 399.99999999999994,
+        "y": 100.0
+      },
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "id": "missing_0",
+      "label": "Add Authentication",
+      "type": "auth",
+      "category": "missing_feature",
+      "data": {
+        "description": "User authentication system",
+        "priority": "high",
+        "implementation": "Add login/signup functionality with JWT tokens",
+        "feature_name": "authentication"
+      },
+      "style": {
+        "backgroundColor": "#EF4444",
+        "color": "white",
+        "borderColor": "#6B7280",
+        "borderWidth": 2,
+        "borderStyle": "dashed",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "opacity": 0.8
+      },
+      "position": {
+        "x": 750.0,
+        "y": 300.0
+      },
+      "icon": "\ud83d\udd10"
+    },
+    {
+      "id": "missing_1",
+      "label": "Add Testing",
+      "type": "testing",
+      "category": "missing_feature",
+      "data": {
+        "description": "Automated testing framework",
+        "priority": "medium",
+        "implementation": "Implement unit and integration tests",
+        "feature_name": "testing"
+      },
+      "style": {
+        "backgroundColor": "#F59E0B",
+        "color": "white",
+        "borderColor": "#6B7280",
+        "borderWidth": 2,
+        "borderStyle": "dashed",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "opacity": 0.8
+      },
+      "position": {
+        "x": 225.00000000000009,
+        "y": 603.1088913245535
+      },
+      "icon": "\ud83e\uddea"
+    },
+    {
+      "id": "missing_2",
+      "label": "Add Documentation",
+      "type": "documentation",
+      "category": "missing_feature",
+      "data": {
+        "description": "Project documentation",
+        "priority": "low",
+        "implementation": "Add README and API documentation",
+        "feature_name": "documentation"
+      },
+      "style": {
+        "backgroundColor": "#84CC16",
+        "color": "white",
+        "borderColor": "#6B7280",
+        "borderWidth": 2,
+        "borderStyle": "dashed",
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "opacity": 0.8
+      },
+      "position": {
+        "x": 224.99999999999986,
+        "y": -3.108891324553497
+      },
+      "icon": "\ud83d\udcda"
+    },
+    {
+      "id": "workflow_website_enhancement",
+      "label": "Website Enhancement",
+      "type": "workflow",
+      "category": "workflow",
+      "data": {
+        "description": "Improve website functionality and user experience",
+        "workflow_id": "website_enhancement",
+        "steps": [
+          {
+            "name": "SEO Optimization",
+            "type": "design",
+            "description": "Add meta tags, structured data, and sitemap"
+          },
+          {
+            "name": "Performance Optimization",
+            "type": "development",
+            "description": "Optimize images, minify CSS/JS, enable caching"
+          },
+          {
+            "name": "Accessibility Audit",
+            "type": "testing",
+            "description": "Ensure WCAG compliance and screen reader support"
+          },
+          {
+            "name": "Mobile Testing",
+            "type": "testing",
+            "description": "Test on various devices and screen sizes"
+          }
+        ]
+      },
+      "style": {
+        "backgroundColor": "#1F2937",
+        "color": "white",
+        "borderColor": "#374151",
+        "borderWidth": 3,
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "width": 200,
+        "height": 60
+      },
+      "position": {
+        "x": 200,
+        "y": 600
+      },
+      "icon": "\ud83d\udd04"
+    },
+    {
+      "id": "step_website_enhancement_0",
+      "label": "SEO Optimization",
+      "type": "design",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "website_enhancement",
+        "step_index": 0,
+        "step_type": "design",
+        "description": "Add meta tags, structured data, and sitemap"
+      },
+      "style": {
+        "backgroundColor": "#06B6D4",
+        "color": "white",
+        "borderColor": "#06B6D4",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 200,
+        "y": 700
+      },
+      "icon": "\ud83c\udfa8"
+    },
+    {
+      "id": "step_website_enhancement_1",
+      "label": "Performance Optimization",
+      "type": "development",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "website_enhancement",
+        "step_index": 1,
+        "step_type": "development",
+        "description": "Optimize images, minify CSS/JS, enable caching"
+      },
+      "style": {
+        "backgroundColor": "#10B981",
+        "color": "white",
+        "borderColor": "#10B981",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 200,
+        "y": 780
+      },
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "id": "step_website_enhancement_2",
+      "label": "Accessibility Audit",
+      "type": "testing",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "website_enhancement",
+        "step_index": 2,
+        "step_type": "testing",
+        "description": "Ensure WCAG compliance and screen reader support"
+      },
+      "style": {
+        "backgroundColor": "#F59E0B",
+        "color": "white",
+        "borderColor": "#F59E0B",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 200,
+        "y": 860
+      },
+      "icon": "\ud83e\uddea"
+    },
+    {
+      "id": "step_website_enhancement_3",
+      "label": "Mobile Testing",
+      "type": "testing",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "website_enhancement",
+        "step_index": 3,
+        "step_type": "testing",
+        "description": "Test on various devices and screen sizes"
+      },
+      "style": {
+        "backgroundColor": "#F59E0B",
+        "color": "white",
+        "borderColor": "#F59E0B",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 200,
+        "y": 940
+      },
+      "icon": "\ud83e\uddea"
+    },
+    {
+      "id": "workflow_content_management",
+      "label": "Content Management",
+      "type": "workflow",
+      "category": "workflow",
+      "data": {
+        "description": "Manage and update website content",
+        "workflow_id": "content_management",
+        "steps": [
+          {
+            "name": "Content Planning",
+            "type": "design",
+            "description": "Plan content updates and new pages"
+          },
+          {
+            "name": "Content Creation",
+            "type": "development",
+            "description": "Create new content and update existing pages"
+          },
+          {
+            "name": "Content Review",
+            "type": "testing",
+            "description": "Review content for accuracy and SEO"
+          },
+          {
+            "name": "Content Deployment",
+            "type": "deployment",
+            "description": "Deploy updated content to live site"
+          }
+        ]
+      },
+      "style": {
+        "backgroundColor": "#1F2937",
+        "color": "white",
+        "borderColor": "#374151",
+        "borderWidth": 3,
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "width": 200,
+        "height": 60
+      },
+      "position": {
+        "x": 350,
+        "y": 600
+      },
+      "icon": "\ud83d\udd04"
+    },
+    {
+      "id": "step_content_management_0",
+      "label": "Content Planning",
+      "type": "design",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "content_management",
+        "step_index": 0,
+        "step_type": "design",
+        "description": "Plan content updates and new pages"
+      },
+      "style": {
+        "backgroundColor": "#06B6D4",
+        "color": "white",
+        "borderColor": "#06B6D4",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 350,
+        "y": 700
+      },
+      "icon": "\ud83c\udfa8"
+    },
+    {
+      "id": "step_content_management_1",
+      "label": "Content Creation",
+      "type": "development",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "content_management",
+        "step_index": 1,
+        "step_type": "development",
+        "description": "Create new content and update existing pages"
+      },
+      "style": {
+        "backgroundColor": "#10B981",
+        "color": "white",
+        "borderColor": "#10B981",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 350,
+        "y": 780
+      },
+      "icon": "\ud83d\udcbb"
+    },
+    {
+      "id": "step_content_management_2",
+      "label": "Content Review",
+      "type": "testing",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "content_management",
+        "step_index": 2,
+        "step_type": "testing",
+        "description": "Review content for accuracy and SEO"
+      },
+      "style": {
+        "backgroundColor": "#F59E0B",
+        "color": "white",
+        "borderColor": "#F59E0B",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 350,
+        "y": 860
+      },
+      "icon": "\ud83e\uddea"
+    },
+    {
+      "id": "step_content_management_3",
+      "label": "Content Deployment",
+      "type": "deployment",
+      "category": "workflow_step",
+      "data": {
+        "workflow_id": "content_management",
+        "step_index": 3,
+        "step_type": "deployment",
+        "description": "Deploy updated content to live site"
+      },
+      "style": {
+        "backgroundColor": "#8B5CF6",
+        "color": "white",
+        "borderColor": "#8B5CF6",
+        "borderWidth": 2,
+        "fontSize": 12,
+        "fontWeight": "normal"
+      },
+      "position": {
+        "x": 350,
+        "y": 940
+      },
+      "icon": "\ud83d\ude80"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_0",
+      "source": "workflow_website_enhancement",
+      "target": "step_website_enhancement_0",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_1",
+      "source": "workflow_website_enhancement",
+      "target": "step_website_enhancement_1",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_2",
+      "source": "workflow_website_enhancement",
+      "target": "step_website_enhancement_2",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_3",
+      "source": "workflow_website_enhancement",
+      "target": "step_website_enhancement_3",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_4",
+      "source": "step_website_enhancement_0",
+      "target": "step_website_enhancement_1",
+      "type": "step_sequence",
+      "style": {
+        "stroke": "#10B981",
+        "strokeWidth": 3,
+        "strokeDasharray": "0"
+      },
+      "label": "Next"
+    },
+    {
+      "id": "edge_5",
+      "source": "step_website_enhancement_1",
+      "target": "step_website_enhancement_2",
+      "type": "step_sequence",
+      "style": {
+        "stroke": "#10B981",
+        "strokeWidth": 3,
+        "strokeDasharray": "0"
+      },
+      "label": "Next"
+    },
+    {
+      "id": "edge_6",
+      "source": "step_website_enhancement_2",
+      "target": "step_website_enhancement_3",
+      "type": "step_sequence",
+      "style": {
+        "stroke": "#10B981",
+        "strokeWidth": 3,
+        "strokeDasharray": "0"
+      },
+      "label": "Next"
+    },
+    {
+      "id": "edge_7",
+      "source": "workflow_content_management",
+      "target": "step_content_management_0",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_8",
+      "source": "workflow_content_management",
+      "target": "step_content_management_1",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_9",
+      "source": "workflow_content_management",
+      "target": "step_content_management_2",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_10",
+      "source": "workflow_content_management",
+      "target": "step_content_management_3",
+      "type": "workflow_step",
+      "style": {
+        "stroke": "#3B82F6",
+        "strokeWidth": 2
+      },
+      "label": "Contains"
+    },
+    {
+      "id": "edge_11",
+      "source": "step_content_management_0",
+      "target": "step_content_management_1",
+      "type": "step_sequence",
+      "style": {
+        "stroke": "#10B981",
+        "strokeWidth": 3,
+        "strokeDasharray": "0"
+      },
+      "label": "Next"
+    },
+    {
+      "id": "edge_12",
+      "source": "step_content_management_1",
+      "target": "step_content_management_2",
+      "type": "step_sequence",
+      "style": {
+        "stroke": "#10B981",
+        "strokeWidth": 3,
+        "strokeDasharray": "0"
+      },
+      "label": "Next"
+    },
+    {
+      "id": "edge_13",
+      "source": "step_content_management_2",
+      "target": "step_content_management_3",
+      "type": "step_sequence",
+      "style": {
+        "stroke": "#10B981",
+        "strokeWidth": 3,
+        "strokeDasharray": "0"
+      },
+      "label": "Next"
+    }
+  ],
+  "metadata": {
+    "project_id": "20250621_102240_39e0879b",
+    "generated_at": "2025-06-21T10:22:41.148231",
+    "total_nodes": 17,
+    "total_edges": 14,
+    "node_types": [
+      "workflow",
+      "development",
+      "testing",
+      "documentation",
+      "deployment",
+      "auth",
+      "design"
+    ],
+    "analysis_summary": {
+      "project_type": "static_website",
+      "existing_features": 4,
+      "missing_features": 3,
+      "workflow_suggestions": 1
+    }
+  }
+}

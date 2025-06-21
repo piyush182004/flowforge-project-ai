@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
+import WorkflowGraph from '@/components/WorkflowGraph';
 import { 
   BarChart3, 
   Calendar, 
@@ -41,6 +42,11 @@ const Dashboard = () => {
   const [graphData, setGraphData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState<'idle' | 'uploading' | 'analyzing' | 'complete'>('idle');
+  
+  // Workflow graph states
+  const [showWorkflowGraph, setShowWorkflowGraph] = useState(false);
+  const [workflowGraphData, setWorkflowGraphData] = useState<any>(null);
+  const [loadingGraph, setLoadingGraph] = useState(false);
 
   const projects = [
     {
@@ -297,6 +303,46 @@ const Dashboard = () => {
     }
   };
 
+  // Handle viewing workflow graph
+  const handleViewWorkflowGraph = async () => {
+    if (!projectId) {
+      setError('No project ID available');
+      return;
+    }
+
+    setLoadingGraph(true);
+    setError(null);
+
+    try {
+      console.log(`🔍 Fetching workflow graph for project: ${projectId}`);
+      
+      const response = await fetch(`http://localhost:5000/api/graph/${projectId}`);
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`❌ Failed to fetch graph with status ${response.status}:`, errorText);
+        throw new Error(`Failed to fetch workflow graph: ${errorText}`);
+      }
+
+      const graphData = await response.json();
+      console.log('✅ Workflow graph fetched successfully:', {
+        nodesCount: graphData.nodes?.length || 0,
+        edgesCount: graphData.edges?.length || 0,
+        metadata: graphData.metadata
+      });
+      
+      setWorkflowGraphData(graphData);
+      setShowWorkflowGraph(true);
+      
+    } catch (err) {
+      console.error('❌ Error fetching workflow graph:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Failed to load workflow graph';
+      setError(errorMessage);
+    } finally {
+      setLoadingGraph(false);
+    }
+  };
+
   return (
     <Layout>
       <div className="container mx-auto px-6 py-8">
@@ -538,9 +584,13 @@ const Dashboard = () => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-3">
-                  <Button className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700">
+                  <Button 
+                    onClick={handleViewWorkflowGraph}
+                    disabled={loadingGraph || !projectId}
+                    className="bg-gradient-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700"
+                  >
                     <Eye className="w-4 h-4 mr-2" />
-                    View Workflow Graph
+                    {loadingGraph ? 'Loading Graph...' : 'View Workflow Graph'}
                   </Button>
                   <Button variant="outline">
                     <Download className="w-4 h-4 mr-2" />
@@ -705,6 +755,14 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* Workflow Graph Modal */}
+      {showWorkflowGraph && workflowGraphData && (
+        <WorkflowGraph
+          graphData={workflowGraphData}
+          onClose={() => setShowWorkflowGraph(false)}
+        />
+      )}
     </Layout>
   );
 };

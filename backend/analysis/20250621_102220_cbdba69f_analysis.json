@@ -1,0 +1,215 @@
+{
+  "project_overview": {
+    "total_files": 56,
+    "file_types": {
+      ".html": 4,
+      ".css": 6,
+      ".jpg": 21,
+      ".png": 6,
+      ".js": 9,
+      ".ttf": 4,
+      ".woff2": 4,
+      ".map": 2
+    },
+    "directories": [],
+    "main_components": [],
+    "entry_points": [],
+    "project_structure": {
+      "name": "20250621_102220_cbdba69f",
+      "type": "directory",
+      "children": [
+        {
+          "name": "templatemo_589_lugx_gaming",
+          "type": "directory",
+          "children": [
+            {
+              "name": "assets",
+              "type": "directory",
+              "children": []
+            },
+            {
+              "name": "contact.html",
+              "type": "file",
+              "children": []
+            },
+            {
+              "name": "index.html",
+              "type": "file",
+              "children": []
+            },
+            {
+              "name": "product-details.html",
+              "type": "file",
+              "children": []
+            },
+            {
+              "name": "shop.html",
+              "type": "file",
+              "children": []
+            },
+            {
+              "name": "vendor",
+              "type": "directory",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "existing_features": [
+    {
+      "name": "responsive_design",
+      "confidence": 0.9,
+      "files": [
+        "templatemo_589_lugx_gaming\\assets\\css\\animate.css",
+        "templatemo_589_lugx_gaming\\assets\\css\\flex-slider.css",
+        "templatemo_589_lugx_gaming\\assets\\css\\fontawesome.css",
+        "templatemo_589_lugx_gaming\\assets\\css\\owl.css",
+        "templatemo_589_lugx_gaming\\assets\\css\\templatemo-lugx-gaming.css",
+        "templatemo_589_lugx_gaming\\vendor\\bootstrap\\css\\bootstrap.min.css"
+      ],
+      "description": "Mobile-responsive design with CSS media queries"
+    },
+    {
+      "name": "interactive_elements",
+      "confidence": 0.8,
+      "files": [
+        "templatemo_589_lugx_gaming\\assets\\js\\counter.js",
+        "templatemo_589_lugx_gaming\\assets\\js\\custom.js",
+        "templatemo_589_lugx_gaming\\assets\\js\\isotope.min.js",
+        "templatemo_589_lugx_gaming\\assets\\js\\owl-carousel.js",
+        "templatemo_589_lugx_gaming\\vendor\\bootstrap\\js\\bootstrap.min.js",
+        "templatemo_589_lugx_gaming\\vendor\\jquery\\jquery.js",
+        "templatemo_589_lugx_gaming\\vendor\\jquery\\jquery.min.js",
+        "templatemo_589_lugx_gaming\\vendor\\jquery\\jquery.slim.js",
+        "templatemo_589_lugx_gaming\\vendor\\jquery\\jquery.slim.min.js"
+      ],
+      "description": "JavaScript-powered interactive components"
+    },
+    {
+      "name": "contact_forms",
+      "confidence": 0.7,
+      "files": [
+        "templatemo_589_lugx_gaming\\contact.html",
+        "templatemo_589_lugx_gaming\\index.html",
+        "templatemo_589_lugx_gaming\\product-details.html",
+        "templatemo_589_lugx_gaming\\shop.html"
+      ],
+      "description": "Contact forms for user interaction"
+    },
+    {
+      "name": "image_gallery",
+      "confidence": 0.6,
+      "files": [
+        "templatemo_589_lugx_gaming\\assets\\images\\banner-bg.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\banner-image.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\caption-dec.png",
+        "templatemo_589_lugx_gaming\\assets\\images\\categories-01.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\categories-02.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\categories-03.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\categories-04.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\categories-05.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\cta-bg.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\featured-01.png",
+        "templatemo_589_lugx_gaming\\assets\\images\\featured-02.png",
+        "templatemo_589_lugx_gaming\\assets\\images\\featured-03.png",
+        "templatemo_589_lugx_gaming\\assets\\images\\featured-04.png",
+        "templatemo_589_lugx_gaming\\assets\\images\\footer-bg.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\logo.png",
+        "templatemo_589_lugx_gaming\\assets\\images\\page-heading-bg.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\single-game.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\top-game-01.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\top-game-02.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\top-game-03.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\top-game-04.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\top-game-05.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\top-game-06.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\trending-01.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\trending-02.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\trending-03.jpg",
+        "templatemo_589_lugx_gaming\\assets\\images\\trending-04.jpg"
+      ],
+      "description": "Image gallery or carousel functionality"
+    }
+  ],
+  "missing_features": [
+    {
+      "name": "authentication",
+      "priority": "high",
+      "description": "User authentication system",
+      "implementation": "Add login/signup functionality with JWT tokens"
+    },
+    {
+      "name": "testing",
+      "priority": "medium",
+      "description": "Automated testing framework",
+      "implementation": "Implement unit and integration tests"
+    },
+    {
+      "name": "documentation",
+      "priority": "low",
+      "description": "Project documentation",
+      "implementation": "Add README and API documentation"
+    }
+  ],
+  "workflow_suggestions": [
+    {
+      "id": "basic_flow",
+      "name": "Basic Development Flow",
+      "description": "Standard development process",
+      "steps": [
+        {
+          "name": "Project Setup",
+          "type": "setup"
+        },
+        {
+          "name": "Feature Development",
+          "type": "development"
+        },
+        {
+          "name": "Testing",
+          "type": "testing"
+        },
+        {
+          "name": "Deployment",
+          "type": "deployment"
+        }
+      ]
+    }
+  ],
+  "complexity_analysis": {
+    "cyclomatic_complexity": 0,
+    "lines_of_code": 22318,
+    "function_count": 0,
+    "class_count": 0,
+    "comment_ratio": 0.13912536965677927,
+    "maintainability_index": 80.46450739313559
+  },
+  "technology_stack": {
+    "languages": [
+      "HTML",
+      "JavaScript",
+      "CSS"
+    ],
+    "frameworks": [],
+    "databases": [],
+    "tools": [],
+    "platforms": [],
+    "frontend": [
+      "Bootstrap",
+      "jQuery"
+    ],
+    "backend": [],
+    "build_tools": [],
+    "version_control": [],
+    "deployment": []
+  },
+  "recommendations": [
+    "Consider adding automated testing for better code quality",
+    "Implement proper error handling and logging",
+    "Add API documentation for better developer experience",
+    "Consider implementing CI/CD pipeline for automated deployment"
+  ],
+  "project_type": "static_website"
+}
