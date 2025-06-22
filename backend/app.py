@@ -20,10 +20,12 @@ CORS(app,
 from routes.upload import upload_bp
 from routes.analysis import analysis_bp
 from routes.graph import graph_bp
+from routes.github_analyzer import analyzer_bp
 
 app.register_blueprint(upload_bp, url_prefix='/api')
 app.register_blueprint(analysis_bp, url_prefix='/api')
 app.register_blueprint(graph_bp, url_prefix='/api')
+app.register_blueprint(analyzer_bp, url_prefix='/api')
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
